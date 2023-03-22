@@ -9,7 +9,7 @@ Completely screw over OneShot's dialogue and play OneShot the way absolutely no 
 5. Hit the randomize button and watch it mess everything up
 6. Once done, restart OneShot if it's already running, open the settings, and select whatever language you will get as a result of this
 ## Known issues
-- Sometimes (and i assume because the message is too long), when displaying a randomized string as a desktop message, the game will crash with the 'nil cant be coerced into integer' error. **Temporary solution:** Re-randomize, restart game, hope for the best.
+None
 ## Your code is bad
 Ok, make an [issue](https://github.com/notsuu/OneshotStringRandomizer/issues) if its a bug or something, i dont know
 ## What about Linux?
