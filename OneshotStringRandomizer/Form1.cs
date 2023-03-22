@@ -44,7 +44,7 @@ namespace OneshotStringRandomizer
         Random rng = new Random();
         private void button2_Click(object sender, EventArgs e)
         {
-            Control[] controlElements = { this.textBox1, this.button1, this.checkBox1, this.checkBox2, this.button2 };
+           Control[] controlElements = { this.textBox1, this.button1, this.checkBox1, this.checkBox2, this.button2, this.checkBox3 };
             foreach (Control obj in controlElements)
             {
                 obj.Enabled = false;
@@ -52,6 +52,7 @@ namespace OneshotStringRandomizer
             string gameDirectory = this.textBox1.Text;
             bool preserveSpeechTags = this.checkBox1.Checked;
             bool randomizeImages = this.checkBox2.Checked;
+            bool keepRemotePuzzle = this.checkBox3.Checked;
             try
             {
                 sendLog("Reading "+ gameDirectory + "\\Languages\\fr.po");
@@ -111,6 +112,10 @@ namespace OneshotStringRandomizer
                             file[li] = "msgstr \"" + sort_strings[ti] + "\"";
                         }
                     }
+                    if (li > 0 && file[li-1].StartsWith("msgid \"@ed [All of the numbers") && keepRemotePuzzle)
+                    {
+                        file[li] = file[li - 1].Remove(3,2).Insert(3,"str");
+                    }
                 }
                 //hardcoded rewrites for language code
                 file[5] = "msgid \"rand\"";
@@ -159,12 +164,13 @@ namespace OneshotStringRandomizer
                     sendLog("Writing " + journalImages[i] + " as " + shuffleJournal[i]);
                     File.Copy(gameDirectory + "\\Graphics\\Journal\\" + journalImages[i] + ".bmp", gameDirectory + "\\Graphics\\Journal\\rand\\" + shuffleJournal[i] + ".bmp", true);
                 }
-            } catch (Exception err)
-            {
-                sendLog(err.GetType().ToString()+": "+err.Message,true);
-                sendLog(err.StackTrace,true);
+                sendLog("Randomization complete!");
             }
-            sendLog("Randomization complete!");
+            catch (Exception err)
+            {
+                sendLog(err.GetType().ToString() + ": " + err.Message, true);
+                sendLog(err.StackTrace, true);
+            }
             foreach (Control obj in controlElements)
             {
                 obj.Enabled = true;
