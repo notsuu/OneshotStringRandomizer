@@ -157,7 +157,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "OneShot String Randomizer (v1.1.1)";
+            this.Text = "OneShot String Randomizer (v1.1.2)";
             this.ResumeLayout(false);
             this.PerformLayout();
 

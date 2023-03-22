@@ -106,10 +106,25 @@ namespace OneshotStringRandomizer
                         ti++;
                         if (sort_tags[ti] != null && preserveSpeechTags)
                         {
-                            file[li] = "msgstr \"" + sort_tags[ti]+" " + sort_strings[ti]+"\"";
+                            file[li] = "msgstr \"" + sort_tags[ti] + " " + sort_strings[ti] + "\"";
                         } else
                         {
                             file[li] = "msgstr \"" + sort_strings[ti] + "\"";
+                        }
+                        if (line.StartsWith("msgstr \"@desktop") && file[li-1].Contains("\\\\n"))
+                        {
+                            //fill in missing amount of newlines to avoid crashes. I hate Desktop_Messsage line 130 with a passion
+                            int missingNewlines = file[li - 1].AllIndexesOf("\\\\n").Count - file[li].AllIndexesOf("\\\\n").Count;
+                            for (int ni = 1; ni <= missingNewlines; ni++)
+                            {
+                                if (file[li].Length > 20*ni)
+                                {
+                                    file[li] = file[li].Insert(20 * ni, "\\\\n");
+                                } else
+                                {
+                                    file[li] = file[li].Remove(file[li].Length - 1) + "\\\\n\"";
+                                }
+                            }
                         }
                     }
                     if (li > 0 && file[li-1].StartsWith("msgid \"@ed [All of the numbers") && keepRemotePuzzle)
@@ -178,7 +193,7 @@ namespace OneshotStringRandomizer
         }
     }
 
-    static class RandomExtensions
+    static class Extensions
     {
         private static Random rng = new Random();
 
@@ -204,6 +219,19 @@ namespace OneshotStringRandomizer
                 T value = list[k];
                 list[k] = list[n];
                 list[n] = value;
+            }
+        }
+        public static List<int> AllIndexesOf(this string str, string value)
+        {
+            if (String.IsNullOrEmpty(value))
+                throw new ArgumentException("The string to find may not be empty", "value");
+            List<int> indexes = new List<int>();
+            for (int index = 0; ; index += value.Length)
+            {
+                index = str.IndexOf(value, index);
+                if (index == -1)
+                    return indexes;
+                indexes.Add(index);
             }
         }
     }
