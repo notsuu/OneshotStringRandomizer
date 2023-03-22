@@ -1,5 +1,6 @@
 # OneShot String Randomizer
 Completely screw over OneShot's dialogue and play OneShot the way absolutely no one wanted you to!
+<img src="https://cdn.discordapp.com/attachments/1088101923116302346/1088101923342778458/image.png">
 ## How to use
 1. Download and unzip the latest version at the [Releases](https://github.com/notsuu/OneshotStringRandomizer/releases) tab
 2. Make sure you have [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48) or newer installed on your computer
