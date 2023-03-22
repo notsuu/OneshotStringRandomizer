@@ -10,3 +10,5 @@ Completely screw over OneShot's dialogue and play OneShot the way absolutely no 
 6. Once done, restart OneShot if it's already running, open the settings, and select whatever language you will get as a result of this
 ## Your code is bad
 Ok, make an [issue](https://github.com/notsuu/OneshotStringRandomizer/issues) if its a bug or something, i dont know
+## What about Linux?
+I dont know, it might run under Wine, might not, check for yourself
