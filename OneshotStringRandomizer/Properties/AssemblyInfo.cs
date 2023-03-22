@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OneshotStringRandomizer")]
+[assembly: AssemblyTitle("OneShot String Randomizer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OneshotStringRandomizer")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyProduct("OneShot String Randomizer")]
+[assembly: AssemblyCopyright("© Copyleft Softworks 1984")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
