@@ -1,3 +1,7 @@
+This branch contains the old version of the randomizer targeting .NET Framework. The latest version is available on, well, the [master](https://github.com/notsuu/OneshotStringRandomizer/tree/master) branch.
+
+<hr>
+
 # OneShot String Randomizer
 Completely screw over OneShot's dialogue and play OneShot the way absolutely no one wanted you to!
 <img src="https://cdn.discordapp.com/attachments/1088101923116302346/1088101923342778458/image.png">
